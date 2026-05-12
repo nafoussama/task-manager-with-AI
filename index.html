@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>Todo List</title>
+    <meta
+      name="description"
+      content="A simple, clean todo list that saves your tasks locally."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-inner">
+          <div class="brand">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="8" fill="#6366f1" />
+              <path
+                d="M8 14.5L12 18.5L20 10"
+                stroke="white"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h1>My Tasks</h1>
+          </div>
+          <div class="stats" id="stats"></div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="add-task-form">
+          <input
+            type="text"
+            id="task-input"
+            class="task-input"
+            placeholder="Add a new task..."
+            maxlength="200"
+            autocomplete="off"
+          />
+          <button class="add-btn" id="add-btn" aria-label="Add task">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path
+                d="M9 3V15M3 9H15"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+            Add
+          </button>
+        </div>
+
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <ul class="task-list" id="task-list"></ul>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="28" fill="#f1f5f9" />
+            <path
+              d="M18 28h20M28 18v20"
+              stroke="#cbd5e1"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p id="empty-message">No tasks yet. Add one above!</p>
+        </div>
+
+        <div class="bottom-bar" id="bottom-bar" hidden>
+          <span id="remaining-count"></span>
+          <button class="clear-btn" id="clear-btn">Clear completed</button>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
